@@ -1,0 +1,13 @@
+[package]
+name         = "configured"
+version      = "0.1.0"
+edition      = "2021"
+rust-version = "1.61"
+
+[dependencies]
+anyhow = "1"
+config = "0"
+serde  = "1"
+
+[dev-dependencies]
+serde_derive = "1"
