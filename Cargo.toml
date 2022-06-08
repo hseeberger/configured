@@ -4,6 +4,14 @@ version      = "0.1.0"
 edition      = "2021"
 rust-version = "1.61"
 
+description   = "Utility to load configuration from three well defined layers into any type which can be deserialized by Serde"
+authors       = [ "Heiko Seeberger <git@heikoseeberger.de>" ]
+license-file  = "LICENSE"
+readme        = "README.md"
+homepage      = "https://github.com/hseeberger/configured"
+repository    = "https://github.com/hseeberger/configured"
+documentation = "https://github.com/hseeberger/configured"
+
 [dependencies]
 anyhow = "1"
 config = "0"
