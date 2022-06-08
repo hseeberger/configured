@@ -13,12 +13,15 @@ pub const CONFIG_ENVIRONMENT: &str = "CONFIG_ENVIRONMENT";
 pub const CONFIG_ENV_PREFIX: &str = "CONIFG_ENV_PREFIX";
 
 pub trait Configured: Sized {
-    /// Load configuration from three layers into any struct which can be deserialized by Serde.
+    /// Utility to load configuration from three well defined layers into any type which can be deserialized by [Serde](https://serde.rs/).
     ///
-    /// First values from the mandatory default configuration file at `<CONFIG_DIR>/default.toml`
-    /// are loaded. Then, if if the environment variable `CONFIG_ENVIRONMENT` is defined, values
-    /// from the environment (e.g. "prod") specific configuration file at
-    /// `<CONFIG_DIR>/<CONFIG_ENVIRONMENT>.toml` are loaded as an overlay.
+    /// First, values from the mandatory default configuration file at `<CONFIG_DIR>/default.toml`
+    /// are loaded.
+    ///
+    /// Then, if if the environment variable `CONFIG_ENVIRONMENT` is defined, values from the
+    /// environment (e.g. "prod") specific configuration file at
+    /// `<CONFIG_DIR>/<CONFIG_ENVIRONMENT>.toml` are loaded as an overlay, i.e. adding or
+    /// overwriting already existing values.
     ///
     /// Finally environment variables prefixed with `<CONFIG_ENV_PREFIX>__` and separated by `__`
     /// (double underscores are used as separators because of snake_cased keys) are used as
@@ -75,7 +78,6 @@ mod tests {
         env::set_var("APP__QUX__QUUX", "Quux2");
 
         let config = Config::load();
-
         assert!(config.is_ok());
         let config = config.unwrap();
 
