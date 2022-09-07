@@ -3,4 +3,4 @@ bar = "Bar"
 baz = "Baz"
 
 [qux]
-quux = "Quux"
+quux-quux = "Quux"
