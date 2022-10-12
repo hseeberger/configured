@@ -1,6 +1,6 @@
 [package]
 name         = "configured"
-version      = "0.4.0"
+version      = "0.4.1-alpha.0"
 edition      = "2021"
 
 description   = "Utility to load configuration from three well defined layers into any type which can be deserialized by Serde"
