@@ -23,8 +23,9 @@ pub trait Configured: Sized {
     /// `<CONFIG_DIR>/<CONFIG_ENVIRONMENT>.toml` are loaded as an overlay, i.e. adding or
     /// overwriting already existing values.
     ///
-    /// Finally environment variables prefixed with `<CONFIG_ENV_PREFIX>_` and separated by `_` are
-    /// used as additional overlay.
+    /// Finally environment variables prefixed with `<CONFIG_ENV_PREFIX>__` and separated by `__`
+    /// (double underscores are used as separators because of snake_cased keys) are used as
+    /// additional overlay.
     fn load() -> Result<Self>;
 }
 
@@ -41,7 +42,7 @@ where
                 Config::builder().add_source(File::with_name(&format!("{config_dir}/default"))),
                 |config, env| config.add_source(File::with_name(&format!("{config_dir}/{env}"))),
             )
-            .add_source(Environment::with_prefix(&config_env_prefix).separator("_"))
+            .add_source(Environment::with_prefix(&config_env_prefix).separator("__"))
             .build()?
             .try_deserialize()
             .context("Cannot load configuration")
@@ -53,31 +54,28 @@ mod tests {
     use super::*;
     use std::env;
 
-    #[derive(Debug, Deserialize)]
-    #[serde(rename_all = "kebab-case")]
+    #[derive(Deserialize)]
     struct Config {
         foo: Foo,
         qux: Qux,
     }
 
-    #[derive(Debug, Deserialize)]
-    #[serde(rename_all = "kebab-case")]
+    #[derive(Deserialize)]
     struct Foo {
         bar: String,
         baz: String,
     }
 
-    #[derive(Debug, Deserialize)]
-    #[serde(rename_all = "kebab-case")]
+    #[derive(Deserialize)]
     struct Qux {
-        quux_quux: String,
+        quux: String,
     }
 
     #[test]
     fn test_load() {
         env::set_var(CONFIG_DIR, "test-config");
         env::set_var(CONFIG_ENVIRONMENT, "dev");
-        env::set_var("APP_QUX_QUUX-QUUX", "Quux2");
+        env::set_var("APP__QUX__QUUX", "Quux2");
 
         let config = Config::load();
         assert!(config.is_ok());
@@ -85,6 +83,6 @@ mod tests {
 
         assert_eq!(config.foo.bar.as_str(), "Bar");
         assert_eq!(config.foo.baz.as_str(), "Baz2");
-        assert_eq!(config.qux.quux_quux.as_str(), "Quux2");
+        assert_eq!(config.qux.quux.as_str(), "Quux2");
     }
 }
