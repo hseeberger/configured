@@ -1,5 +1,16 @@
 # Configured
 
+[![Crates.io][crates-badge]][crates-url]
+[![license][license-badge]][license-url]
+[![build][build-badge]][build-url]
+
+[crates-badge]: https://img.shields.io/crates/v/configured
+[crates-url]: https://crates.io/crates/configured
+[license-badge]: https://img.shields.io/github/license/hseeberger/configured
+[license-url]: https://github.com/hseeberger/configured/blob/main/LICENSE
+[build-badge]: https://img.shields.io/github/actions/workflow/status/hseeberger/configured/ci.yaml
+[build-url]: https://github.com/hseeberger/configured/actions/workflows/ci.yaml
+
 Opinionated utility to load a configuration from three well defined layers into any type which can
 be deserialized by [Serde](https://serde.rs/) using kebab-case.
 

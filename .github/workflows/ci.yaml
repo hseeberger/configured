@@ -1,4 +1,4 @@
-name: test
+name: CI
 
 on:
   push:
@@ -12,11 +12,14 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v3
-      - name: Update Rust
+
+      - name: Install Rust toolchain
         run: |
           rustup update
           rustup toolchain install nightly
           rustup component add rustfmt --toolchain nightly
+          rustup component add clippy --toolchain nightly
+
       - name: Set up cargo cache
         uses: actions/cache@v3
         continue-on-error: false
@@ -29,9 +32,12 @@ jobs:
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-cargo-
-      - name: Check code formatting
-        run: cargo +nightly fmt --all --check
-      - name: Lint
-        run: cargo clippy -- -D warnings
-      - name: Test
+
+      - name: Check code format (cargo fmt)
+        run: cargo +nightly fmt --check
+
+      - name: Lint (cargo clippy)
+        run: cargo clippy --no-deps -- -D warnings
+
+      - name: Test (cargo test)
         run: cargo test
