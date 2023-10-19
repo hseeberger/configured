@@ -15,7 +15,9 @@
 //! ## Example
 //!
 //! ```rust
-//! use configured::Configured;
+//! use configured::{ CONFIG_DIR, CONFIG_OVERLAYS, Configured, Error };
+//! use serde::Deserialize;
+//! use std::env;
 //!
 //! #[derive(Debug, Deserialize)]
 //! #[serde(rename_all = "kebab-case")]
