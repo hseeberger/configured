@@ -2,7 +2,7 @@
 name          = "configured"
 version       = "0.5.1-alpha.0"
 edition       = "2021"
-description   = "Utility to load configuration from three well defined layers into any type which can be deserialized by Serde"
+description   = "Utility to load configuration from well defined layers into any type which can be deserialized by Serde."
 authors       = [ "Heiko Seeberger <git@heikoseeberger.de>" ]
 license-file  = "LICENSE"
 readme        = "README.md"
@@ -11,9 +11,6 @@ repository    = "https://github.com/hseeberger/configured"
 documentation = "https://github.com/hseeberger/configured"
 
 [dependencies]
-config    = "0"
-serde     = "1"
-thiserror = "1"
-
-[dev-dependencies]
-serde_derive = "1"
+config    = { version = "0.13" }
+serde     = { version = "1.0", features = [ "derive" ] }
+thiserror = { version = "1.0" }
