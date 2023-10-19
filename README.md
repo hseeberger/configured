@@ -11,7 +11,7 @@
 [build-badge]: https://img.shields.io/github/actions/workflow/status/hseeberger/configured/ci.yaml
 [build-url]: https://github.com/hseeberger/configured/actions/workflows/ci.yaml
 
-Opinionated utility to load a configuration from three well defined layers into any type which can be deserialized by [Serde](https://serde.rs/) using kebab-case.
+Opinionated utility to load a configuration from well defined layers into any type which can be deserialized by [Serde](https://serde.rs/) using kebab-case.
 
 First, values from the mandatory default configuration file at `<CONFIG_DIR>/default.yaml` are loaded.
 
