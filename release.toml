@@ -1,1 +1,0 @@
-pre-release-commit-message = "build(release): release {{crate_name}} {{version}}"
