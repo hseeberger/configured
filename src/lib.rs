@@ -170,9 +170,10 @@ mod tests {
 
     #[test]
     fn test_load() -> Result<(), Error> {
-        env::set_var(CONFIG_DIR, "test-config");
-        env::set_var(CONFIG_OVERLAYS, "feat, dev");
-        env::set_var("APP__QUX__CORGE_GRAULT", "corge-grault-env");
+        env::set_var("CONFIG_DIR", "test-config");
+        env::set_var("CONFIG_OVERLAYS", "feat, dev");
+        env::set_var("CONFIG_ENV_PREFIX", "FOO");
+        env::set_var("FOO__QUX__CORGE_GRAULT", "corge-grault-env");
 
         let config = Config::load()?;
 
