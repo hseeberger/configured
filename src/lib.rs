@@ -68,7 +68,7 @@ pub const CONFIG_DIR: &str = "CONFIG_DIR";
 pub const CONFIG_OVERLAYS: &str = "CONFIG_OVERLAYS";
 
 /// Environment variable for the prefix of environment variable overrides.
-pub const CONFIG_ENV_PREFIX: &str = "CONIFG_ENV_PREFIX";
+pub const CONFIG_ENV_PREFIX: &str = "CONFIG_ENV_PREFIX";
 
 /// Use (import) this trait and all types that implement `Deserialize` are extended with the `load`
 /// associated function.
