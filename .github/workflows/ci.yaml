@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Nightly needed for `cargo +nightly fmt` below
       - name: Install Rust toolchain
@@ -24,7 +24,6 @@ jobs:
           rustup update
           rustup toolchain install nightly --profile minimal
           rustup component add rustfmt --toolchain nightly
-          # rustup component add clippy --toolchain nightly
 
       - name: Install just
         uses: taiki-e/install-action@v2
@@ -33,6 +32,9 @@ jobs:
 
       - name: Set up Rust cache
         uses: Swatinem/rust-cache@v2
+
+      - name: Build
+        run: just check
 
       - name: Check code format
         run: just fmt_check
