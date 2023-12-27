@@ -1,6 +1,6 @@
 [package]
 name          = "configured"
-version       = "0.7.1"
+version       = "0.7.2"
 edition       = "2021"
 description   = "Utility to load configuration from well defined layers into any type which can be deserialized by Serde."
 authors       = [ "Heiko Seeberger <git@heikoseeberger.de>" ]
