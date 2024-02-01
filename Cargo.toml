@@ -11,6 +11,6 @@ repository    = "https://github.com/hseeberger/configured"
 documentation = "https://docs.rs/configured/latest/configured"
 
 [dependencies]
-config    = { version = "0.13" }
+config    = { version = "0.14" }
 serde     = { version = "1.0", features = [ "derive" ] }
 thiserror = { version = "1.0" }
