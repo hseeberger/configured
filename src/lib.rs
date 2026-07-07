@@ -63,7 +63,7 @@ use serde::Deserialize;
 use std::env;
 use thiserror::Error;
 
-pub use convert_case::Case;
+pub use config::Case;
 
 /// Environment variable for the configuration directory; default is `"config"`.
 pub const CONFIG_DIR: &str = "CONFIG_DIR";
