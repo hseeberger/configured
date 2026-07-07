@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- bump `config` from 0.14 to 0.15
+- bump `thiserror` from 1.0 to 2.0
+- upgrade to Rust edition 2024
+- gate file formats behind the `yaml` (default) and `toml` features
+
 ## [0.7.1](https://github.com/hseeberger/configured/compare/v0.7.0...v0.7.1) - 2023-11-05
 
 ### Other
