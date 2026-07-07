@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.0](https://github.com/hseeberger/configured/compare/v0.8.0...v0.9.0) - 2026-07-07
+
+### Added
+
+- [**breaking**] support configurable case styles via load(Case)
+
 ### Changed
 - bump `config` from 0.14 to 0.15
 - bump `thiserror` from 1.0 to 2.0
