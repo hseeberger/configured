@@ -20,3 +20,7 @@ thiserror    = { version = "2.0" }
 default = [ "yaml" ]
 yaml    = [ "config/yaml" ]
 toml    = [ "config/toml" ]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = [ "--cfg", "docsrs" ]

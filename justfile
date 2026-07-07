@@ -30,6 +30,6 @@ test:
     cargo test --all-features
 
 doc:
-    cargo doc --no-deps
+    RUSTDOCFLAGS="-D warnings --cfg docsrs" cargo +{{ nightly }} doc --no-deps --all-features
 
 all: check fmt lint test doc
