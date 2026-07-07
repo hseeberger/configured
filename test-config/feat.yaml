@@ -1,5 +1,5 @@
-foo:
-  baz: baz-feat
+contact:
+  last_name: Doe-feat
 
-qux:
-  quux: quux-feat
+address:
+  street_name: Main Street feat

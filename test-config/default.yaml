@@ -1,7 +1,7 @@
-foo:
-  bar: bar
-  baz: baz
+contact:
+  first_name: Jane
+  last_name: Doe
 
-qux:
-  quux: quux
-  corge-grault: corge-grault
+address:
+  street_name: Main Street
+  zip_code: "12345"
