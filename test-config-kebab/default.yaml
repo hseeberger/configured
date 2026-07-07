@@ -1,0 +1,7 @@
+contact:
+  first-name: Jane
+  last-name: Doe
+
+address:
+  street-name: Main Street
+  zip-code: "12345"

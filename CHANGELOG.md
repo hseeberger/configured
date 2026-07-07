@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - bump `thiserror` from 1.0 to 2.0
 - upgrade to Rust edition 2024
 - gate file formats behind the `yaml` (default) and `toml` features
+- support configurable case styles: `load` now takes a `Case` (re-exported from `convert_case`) instead of being hard-coded to kebab-case
+- change the default environment variable prefix from `APP` to `CFG`
 
 ## [0.7.1](https://github.com/hseeberger/configured/compare/v0.7.0...v0.7.1) - 2023-11-05
 
