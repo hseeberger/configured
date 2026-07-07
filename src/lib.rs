@@ -1,3 +1,5 @@
+#![cfg_attr(docsrs, feature(doc_cfg))]
+
 //! Opinionated utility to load a configuration from well defined layers into any type which can be
 //! deserialized by [Serde](https://serde.rs/), using the [Case] chosen by the caller.
 //!
