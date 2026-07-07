@@ -33,7 +33,6 @@ name = "configured"
 version = "0.9.0"
 dependencies = [
  "config",
- "convert_case",
  "serde",
  "thiserror",
 ]

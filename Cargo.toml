@@ -11,10 +11,9 @@ documentation = "https://docs.rs/configured/latest/configured/"
 publish       = true
 
 [dependencies]
-config       = { version = "0.15", default-features = false, features = [ "convert-case" ] }
-convert_case = { version = "0.6", default-features = false }
-serde        = { version = "1.0", features = [ "derive" ] }
-thiserror    = { version = "2.0" }
+config    = { version = "0.15", default-features = false, features = [ "convert-case" ] }
+serde     = { version = "1.0", features = [ "derive" ] }
+thiserror = { version = "2.0" }
 
 [features]
 default = [ "yaml" ]
