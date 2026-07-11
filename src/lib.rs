@@ -143,11 +143,13 @@ mod tests {
     struct Contact {
         first_name: String,
         last_name: String,
+        favorite: bool,
     }
 
     #[derive(Debug, Deserialize)]
     struct Address {
         street_name: String,
+        street_number: u16,
         zip_code: String,
     }
 
@@ -163,12 +165,14 @@ mod tests {
     struct KebabContact {
         first_name: String,
         last_name: String,
+        favorite: bool,
     }
 
     #[derive(Debug, Deserialize)]
     #[serde(rename_all = "kebab-case")]
     struct KebabAddress {
         street_name: String,
+        street_number: u16,
         zip_code: String,
     }
 
@@ -186,7 +190,9 @@ mod tests {
 
         assert_eq!(config.contact.first_name.as_str(), "Jane-env");
         assert_eq!(config.contact.last_name.as_str(), "Doe-dev");
+        assert!(config.contact.favorite);
         assert_eq!(config.address.street_name.as_str(), "Main Street feat");
+        assert_eq!(config.address.street_number, 42);
         assert_eq!(config.address.zip_code.as_str(), "12345");
 
         Ok(())
@@ -206,8 +212,36 @@ mod tests {
 
         assert_eq!(config.contact.first_name.as_str(), "Jane-env");
         assert_eq!(config.contact.last_name.as_str(), "Doe");
+        assert!(config.contact.favorite);
         assert_eq!(config.address.street_name.as_str(), "Main Street");
+        assert_eq!(config.address.street_number, 42);
         assert_eq!(config.address.zip_code.as_str(), "12345");
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_load_env_non_string() -> Result<(), Error> {
+        let _guard = ENV_LOCK.lock().unwrap();
+
+        unsafe {
+            env::set_var("CONFIG_DIR", "test-config");
+            env::remove_var("CONFIG_OVERLAYS");
+            env::set_var("CFG__CONTACT__FAVORITE", "false");
+            env::set_var("CFG__ADDRESS__STREET_NUMBER", "7");
+        }
+
+        let config = Config::load(Case::Snake);
+
+        unsafe {
+            env::remove_var("CFG__CONTACT__FAVORITE");
+            env::remove_var("CFG__ADDRESS__STREET_NUMBER");
+        }
+
+        let config = config?;
+
+        assert!(!config.contact.favorite);
+        assert_eq!(config.address.street_number, 7);
 
         Ok(())
     }
