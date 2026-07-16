@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.2](https://github.com/hseeberger/configured/compare/v0.9.1...v0.9.2) - 2026-07-16
+
+### Other
+
+- *(deps)* bump dtolnay/rust-toolchain
+- *(deps)* bump taiki-e/install-action from 2.82.11 to 2.83.0
+- *(deps)* bump taiki-e/install-action in the ci-patches group
+- *(deps)* bump taiki-e/install-action in the ci-patches group
+- *(deps)* bump taiki-e/install-action in the ci-patches group
+- add coverage for non-string field types
+- *(deps)* bump Rust to 1.97.0
+
 ## [0.9.1](https://github.com/hseeberger/configured/compare/v0.9.0...v0.9.1) - 2026-07-07
 
 ### Other
