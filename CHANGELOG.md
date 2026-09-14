@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.0](https://github.com/hseeberger/configured/compare/v0.9.2...v0.10.0) - 2026-09-14
+
+### Added
+
+- [**breaking**] replace load(case) with load(LoadOptions)
+
+### Other
+
+- *(deps)* bump the ci-patch group with 2 updates
+- *(deps)* bump Rust to 1.98.1
+- *(deps)* bump taiki-e/install-action in the ci-minor group
+- *(deps)* bump taiki-e/install-action in the ci-patch group
+
 ## [0.9.2](https://github.com/hseeberger/configured/compare/v0.9.1...v0.9.2) - 2026-08-23
 
 ### Other
