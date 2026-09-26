@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.1](https://github.com/hseeberger/configured/compare/v0.10.0...v0.10.1) - 2026-09-26
+
+### Other
+
+- *(deps)* bump dtolnay/rust-toolchain
+- *(deps)* bump the ci-patch group with 2 updates
+- *(deps)* bump the ci-patch group with 2 updates
+
 ## [0.10.0](https://github.com/hseeberger/configured/compare/v0.9.2...v0.10.0) - 2026-09-14
 
 ### Added
