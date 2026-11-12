@@ -5,7 +5,6 @@ version       = "0.10.0"
 edition       = "2024"
 license       = "Apache-2.0"
 readme        = "README.md"
-homepage      = "https://github.com/hseeberger/configured"
 repository    = "https://github.com/hseeberger/configured"
 documentation = "https://docs.rs/configured/latest/configured/"
 publish       = true
