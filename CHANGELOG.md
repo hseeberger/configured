@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.1](https://github.com/hseeberger/configured/compare/v0.10.0...v0.10.1) - 2026-11-19
+
+### Documentation
+
+- Regenerate changelogs with the unified config ([#131](https://github.com/hseeberger/configured/pull/131))
+
+
 ## [0.10.0](https://github.com/hseeberger/configured/compare/v0.9.2...v0.10.0) - 2026-09-14
 
 ### Features
